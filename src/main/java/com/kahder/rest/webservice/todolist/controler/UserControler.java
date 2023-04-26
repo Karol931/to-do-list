@@ -31,7 +31,7 @@ public class UserControler {
     public  User getUserById(@PathVariable int id) {
         Optional<User> user = userRepository.findById(id);
         if(user.isEmpty())
-            throw new UserNotFoundException("id: " + id);
+            throw new UserNotFoundException("User with that id doesn't exist, id=" + id);
         return user.get();
     }
 

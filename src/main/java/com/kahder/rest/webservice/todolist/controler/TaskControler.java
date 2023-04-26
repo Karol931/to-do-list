@@ -35,7 +35,7 @@ public class TaskControler {
     public  List<Task> getUserTasks(@PathVariable int id) {
         Optional<User> user = userRepository.findById(id);
         if(user.isEmpty())
-            throw new UserNotFoundException("id: " + id);
+            throw new UserNotFoundException("User with that id doesn't exist, id=" + id);
 
         return user.get().getTasks();
     }
@@ -44,11 +44,11 @@ public class TaskControler {
     public Task getUserTaskById(@PathVariable int userId, @PathVariable int id) {
         Optional<User> user = userRepository.findById(userId);
         if(user.isEmpty())
-            throw new UserNotFoundException("User with this id wasn't found id=" + userId);
+            throw new UserNotFoundException("User with that id doesn't exist, id=\"" + userId);
         List<Task> tasks = user.get().getTasks();
         Optional<Task> task = taskRepository.findById(id);
         if(task.isEmpty())
-            throw new TaskNotFoundException("This database doesn't contain task with id=" + id);
+            throw new TaskNotFoundException("Task with this id doesn,t exist, id=" + id);
         if(!tasks.contains(task.get()))
             throw new TaskNotFoundException("This user doesn't contain task with id=" + id);
 
@@ -61,7 +61,7 @@ public class TaskControler {
         Optional<User> user = userRepository.findById(userId);
 
         if(user.isEmpty())
-            throw new UserNotFoundException("id: " + userId);
+            throw new UserNotFoundException("User with that id doesn't exist, id=" + userId);
 
         task.setUser(user.get());
 
@@ -80,11 +80,11 @@ public class TaskControler {
         Optional<User> user = userRepository.findById(userId);
 
         if(user.isEmpty())
-            throw new UserNotFoundException("id: " + userId);
+            throw new UserNotFoundException("User with that id doesn't exist, id=" + userId);
         List<Task> tasks = user.get().getTasks();
         Optional<Task> task = taskRepository.findById(id);
         if(task.isEmpty())
-            throw new TaskNotFoundException("This database doesn't contain task with id=" + id);
+            throw new TaskNotFoundException("Task with this id doesn,t exist, id=" + id);
         if(!tasks.contains(task.get()))
             throw new TaskNotFoundException("This user doesn't contain task with id=" + id);
         taskRepository.deleteById(id);
