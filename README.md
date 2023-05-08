@@ -6,7 +6,7 @@ First download or clone this repository and open it in your favourite java IDE a
 Application starts at: localhost:8080.
 For other methods than GET u need to use API tester like postman.
 
-#Mehods
+# Mehods
 GET methods:
 - localhost:8080/users - show all users
 - localhost:8080/users/{userId} - shows user with this userId
