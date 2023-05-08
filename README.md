@@ -1,6 +1,12 @@
-# to-do-list
+# To do list
 API for to-do-list with Spring Boot
 
+# How to use it?
+First download or clone this repository and open it in your favourite java IDE and run the program.
+Application starts at: localhost:8080.
+For other methods than GET u need to use API tester like postman.
+
+#Mehods
 GET methods:
 - localhost:8080/users - show all users
 - localhost:8080/users/{userId} - shows user with this userId
@@ -16,3 +22,8 @@ POST methods:
 DELETE methods:
 - localhost:8080/users/{userId} - deletes user with userId
 - localhost:8080/users/{userId}/tasks/{taskId} - deletes task with taskId (if owned by user with this userId)
+
+# Tech Stack
+- Java
+- Spring
+- SpringBoot
