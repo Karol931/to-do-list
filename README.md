@@ -2,8 +2,8 @@
 API for to-do-list with Spring Boot
 
 # How to use it?
-First download or clone this repository and open it in your favourite java IDE and run the program.
-Application starts at: localhost:8080.
+First download or clone this repository and open it in your favourite java IDE and run the program.<br />
+Application starts at: localhost:8080.<br />
 For other methods than GET u need to use API tester like postman.
 
 # Mehods
